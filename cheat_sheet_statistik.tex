@@ -284,6 +284,8 @@
         \end{itemize}
         \item Zentr.Grenz.Satz: Für hinreichend großes n jeder Vertilung gilt $\overline{X}_n \tilde N(\mu, \frac{\sigma^2}{n}) $ "normalverteilt"
     \end{itemize}
+
+
     \section{Schl. Statistik}
         \subsubsection*{Anmerkungen}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -348,8 +350,29 @@
             \item $\chi^2 <= c$ H0 behalten
             \item $\chi^2 > c$ H0 verwerfen
         \end{itemize}
-    \section*{Taschenrechner}
-    Hallo
+        \subsubsection*{P-Test}
+
+
+
+
+    \section*{Excel Tests}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Koeffizienten für jede $X_i$ $->$ Formel lässt sich daraus ableiten
+        \item Parameter wird nur im Modell behalten wenn $t > |\frac{\hat{\beta_j}}{\hat{\sigma}_j}| > 2$
+        \item Signifikanzniveau von ca. 5\%
+        \item Alternativ: p-Werte < $\alpha$ werden behalten, p-Werte > $\alpha$ werden verworfen
+        \item F-Test des Bestimmtheitsmaßes:
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Testet ob, nicht auch alle Parameter = 0 sein könnten (Sinnhaftigkeit der Regression)
+            \item Prüfgröße F aus Excel
+            \item FWert: aus F-Verteilung oder gegeben
+            \item $F >= FWert$ $H_0$ verwerfen, Regressionsansatz sinnvoll
+            \item $F < FWert$ $H_0$ behalten, Regressionsansatz schlecht
+            \item Einfacher: Über  F.Krit
+            \item $p Wert < F.Krit$ $H_0$ behalten, Regressionsansatz sinnvoll
+            \item $p Wert > F.Krit$ $H_0$ verwerfen, Regressionsansatz schlecht
+        \end{itemize}
+    \end{itemize}
     
     \end{multicols}
 
