@@ -2,6 +2,16 @@
 
 \usepackage{pdflscape}
 \usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{color}
+\usepackage{enumitem}
+
+\usepackage[left=20mm, right=20mm, top=20mm, bottom=20mm]{geometry}
+
+
+
+\setlength{\columnseprule}{0.5pt}
+\def\columnseprulecolor{\color{black}}
 
 \pagenumbering{gobble}
 
@@ -12,13 +22,67 @@
 
 \begin{document}
 \begin{landscape}
+    \thispagestyle{empty}
+
     \begin{multicols}{4}
-    [
+    
     \section{Beschreibende Statistkik}
-    All human things are subject to decay. And when fate summons, Monarchs must obey.
-    \section{Wahrscheinlichkeitsrechnung}
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Qualitative Merkmale: 
+                \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+                    \item Variieren nach Beschaffenheit
+                    \item Bspw. Geschlecht
+                \end{itemize}
+            \item Quantitative Merkmale:
+                \begin{itemize}[noitemsep,nolistsep]
+                    \item Variieren nach Wert/Zahlen
+                    \item Bspw. Alter, Einkommen
+                \end{itemize}
+        \end{itemize}
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Diskrete Merkmale: 
+                \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+                    \item abgestufte Werte
+                    \item Bspw. Einkommensklasse
+                \end{itemize}
+            \item Stetige Merkmale:
+                \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+                    \item können im Intervall jeden reellen Wert annehmen
+                    \item Bspw. Körpergröße
+                \end{itemize}
+        \end{itemize}
+    \subsubsection*{Skalenniveaus}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Nominal
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item nur Gleichheit oder Andersartigkeit feststellbar (keine Bewertung)
+            \item stets qualitativ (Religion, Beruf etc.)
+        \end{itemize}
+        \item Ordinal
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item natürliche oder festzulegende Rangfolge
+            \item IQ, Schulnoten
+        \end{itemize}
+        \item Kardinal
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item numerischer Art 
+            \item Ausprägung und Unterschied sind messbar
+            \item verhältnisskaliert (Absoluter Nullpunkt vorhanden; Gewicht, Preis (Doppelt so viel.))
+            \item intervallskaliert (Kein Nullpunkt, nur Differenzen; Temperatur (10 Grad wärmer als gestern))
+        \end{itemize}
+    \end{itemize}
+    \subsubsection*{Werte}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Arithmetisches Mittel $\overline{x}$
+    \end{itemize}
+
+
+    \section{Wahrscheinlich-keitsrechnung}
+    Hallo
     \section{Schließende Statistik}
-    ]
+    Hallo
+    \section{Taschenrechner}
+    Hallo
     
     \end{multicols}
 \end{landscape}
