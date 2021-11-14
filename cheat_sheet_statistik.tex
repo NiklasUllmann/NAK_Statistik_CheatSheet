@@ -104,7 +104,7 @@
         \item Standardabweichung $\sigma$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $\sigma = \sqrt{\sigma^2}$
-            \item StichprobenSTD $S = \sqrt{S^2_{n-1}}$
+            \item StichprobenSDA $S = \sqrt{S^2_{n-1}}$
         \end{itemize}
         \item Quartilsabstand (FEHLT)
     \end{itemize}
@@ -183,12 +183,117 @@
 
     \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
         \item Lineare Regression $y(x) = a +bx$
-        \item $b = \frac{c_{XY}}{s_X^2}$ und $a = \overline{y} - b\overline{x}$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $b = \frac{c_{XY}}{s_X^2}$ und $a = \overline{y} - b\overline{x}$
+            \item Interpret: b*x erhöht und Achsenabschnitt(meist nicht anwendbar)
+            \item Regressionswerte = $\widehat{y}_i = y(x_i)$
+            \item Residuen (Fehler) $e_i = y_i - \widehat{y}_i$
+        \end{itemize}
+        \item Andere Regressionen:
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $\hat{y} =  a+bx+cx^2$ Quadr. Regr.
+            \item $\hat{y} =  a+x^b$ Potenzfunkt.
+            \item $\hat{y} =  ab^x$ Expo-funkt.
+        \end{itemize}
+        \item Meth. kleinste Quadrate
+        \item Varianzzerlegung $SSQ_{Total} = SSQ_{Reg} + SSQ_{Resi}$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $SSQ_{Reg} = \sum^n_{i=1} (\hat{y}_i-\overline{y})^2$ (Abweichung von Vorhersage und Mittelwert)
+            \item $SSQ_{Total} = \sum^n_{i=1} (y_i-\overline{y})^2$ (Gesamtabweichung)
+            \item $SSQ_{Resi} = \sum^n_{i=1} (y_i-\hat{y}_i)^2$ (Abweichung von Vorhersage und y)
+        \end{itemize}
+        \item Bestimmtheitsmaß $R^2 = \frac{SSQ_{Reg}}{SSQ_{Total}} = \frac{S^2_{\hat{Y}}}{S^2_Y} = r^2$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $r^2$ gilt nicht für Quadr. Reg. !!!
+            \item Schlecht $0 <= R^2 <= 1$ Gut 
+            \item $R^2 >= 0.8$ akzeptabel
+        \end{itemize}
+        \item Multiple Regr. 
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Y wird durch mehrere Variablen erklärt
+            \item $\hat{y} = a + b_1x_3 + b_2x_3 + b_3x_3$
+        \end{itemize}
+        \item Adjustiertes Bestimmtheitsmaß $R^2_{a} = R^2 - \frac{k}{n-k-1}*(1-R^2)$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Hinzunahme von Params, erhöht den $R^2$ automatisch, auch wenn es nicht besser wird
+            \item $n = Anzahl der Messwerte$
+            \item $k = Anzahl der Reg.Params$
+            \item $R^2_{a}$ kann auch kleiner/negativ werden $->$ Variable nicht aufnehmen
+        \end{itemize}
+        \item Anmerkungen:
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Residualplot: Gutes Modell, wenn kein Mustererkennbar!
+            \item Optimum finden: 1.Ableitung = 0 setzen
+            \item "Faktor Größe" hat nichts mit Einfluss zutun, nur bei standardisierten Daten
+        \end{itemize}
     \end{itemize}
 
-
-    \section{S. Statistik}
-    Hallo
+    \section{Wahrsch. Rech.}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Zufallsvariable $X : \Omega -> R\: mit\: X(\omega) = x$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Funktion, die jedem Möglichen Ergenis eine reelle Zahl zuordnet
+            \item Wahrscheinlichkeits-/ Dichtefunktion $f: P(X =x)$
+            \item Verteiteilungsfunktion $F: P(X <= t)$
+            \item $F$ ist Stammfunktion für $f$ aber muss mit $+C$ angepasst werden
+        \end{itemize}
+        \item Diskrete
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $f: \:R->[0,1] mit f(x)=P(X=x)$
+            \item $P(X=X)$ Wahrscheinlichkeit mit der X die Realisation x annimmt
+            \item $F(t) = P(X <= t) = \sum_{x_i <= t} P(X = x_i)$
+        \end{itemize}
+        \item Stetige
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Zufallsvariable ist stetig, wenn Wahrscheinlichkeit durch Dichtefunktion abbilden lässt
+            \item Dichtefunktion, wenn $\int^{+\infty}_{-\infty} f(x) dx = 1$ und $f(x) >= 0$
+            \item $F(t) = P(X <= t) = \int^{t}_{-\infty} f(x)dx$
+        \end{itemize}
+        \item Erwartungswert
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Diskret: $E(X) = \sum^n_{i=1} x_i * f(x_i)$
+            \item Stetig: $E(X) = \int^{x_{max}}_{x_{min}} x * f(x) dx$
+        \end{itemize}
+        \item Varianz ($Var(X) = \sigma^2$) \& SDA ($\sigma = \sqrt{\sigma^2}$)
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Es gilt: $\sigma^2 = E((X-E(X))^2) = E(X^2)- (E(X))^2$
+            \item Diskret: $Var(X) = \sum^n_{i=1} (x_i-E(X))^2 * f(x_i)$
+            \item Stetig: $Var(X) = \int^{x_{max}}_{x_{min}} (x-E(X))^2 * f(x) dx$
+        \end{itemize}
+        \item Rechenregeln
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $E(a+b*X) = a + b* E(X)$
+            \item $Var(a+b*X) = b^2 * Var(X)$
+            \item $E(X+Y) = E(X) + E(Y)$
+        \end{itemize}
+        \item Stichprobe:
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Stichprobenmittel von unabhängigen Variablen $\overline{X} := \frac{1}{n} (X_1 + \dots + X_n)$
+            \item $E(\overline{X} = \mu)$ und $\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}$
+        \end{itemize}
+        \item Normalverteilung
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item SD-normalverteilung mit $\mu = 0$ und $\sigma = 1$
+            \item z-Transformation $z = \frac{x-\mu}{\sigma}$
+        \end{itemize}
+        \item Zentr.Grenz.Satz: Für hinreichend großes n jeder Vertilung gilt $\overline{X}_n \tilde N(\mu, \frac{\sigma^2}{n}) $ "normalverteilt"
+    \end{itemize}
+    \section{Schl. Statistik}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Mittelwerttest
+        \item Varianztest
+        \item Differenzentest
+        
+        \item $\chi^2$ Test
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $E_{ij} immer >= 5$
+            \item $H_0$ = X, Y sind unabhängig; $H_1$ = X, Y sind abhängig 
+            \item Prüfgröße $\chi^2$ (wie oben, mit erw. Kont.-Tabelle)
+            \item Krit.Wert: $c = \chi^2_{(k-1)(l-1)}[1-\alpha]$
+            \item $\chi^2 <= c$ H0 behalten
+            \item $\chi^2 > c$ H0 verwerfen
+        \end{itemize}
+    \end{itemize}
     \section{Taschenrechner}
     Hallo
     
