@@ -6,7 +6,7 @@
 \usepackage{color}
 \usepackage{enumitem}
 
-\usepackage[left=20mm, right=20mm, top=20mm, bottom=20mm]{geometry}
+\usepackage[left=10mm, right=10mm, top=10mm, bottom=10mm]{geometry}
 
 
 
@@ -25,8 +25,7 @@
     \thispagestyle{empty}
 
     \begin{multicols}{4}
-    
-    \section{Beschreibende Statistkik}
+    \section{B. Statistkik}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Qualitative Merkmale: 
                 \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -74,16 +73,132 @@
     \subsubsection*{Werte}
     \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
         \item Arithmetisches Mittel $\overline{x}$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $\overline{x}=\frac{1}{n}\sum _{i=1}^{n}a_{i}={\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$ 
+            \item Summe aller Abweichungen vom Mittel = 0
+            \item Verschiebung um kostanten Wert a $a + \overline{x}$
+            \item Multiplikation mit konstantem Wert $a \cdot \overline{x}$
+        \end{itemize}
+        \item Median $\widetilde{x}$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Mittleres Element der geordneten Liste
+            \item Bei gerader Anzahl, Durchschnitt der mittleren Elemente
+        \end{itemize}
+        \item Quartile (FEHLT)
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Unteres Quartil $\widetilde{x}_{0,25}$
+            \item Oberes Quartil $\widetilde{x}_{0,75}$
+        \end{itemize}
+        \item Varianz $\sigma^2$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Populations Varianz $\sigma^2 = \frac{\displaystyle\sum_{i=1}^{N}(x_i - \mu)^2} {N}$
+            \item Sample Varianz $S^2_{n-1} = \frac{\displaystyle\sum_{i=1}^{n}(x_i - \overline{x})^2} {n-1}$
+            \item Altn. Formel $\sigma^2 = \overline{x^2} - \overline{x}^2$
+            \item Eigenschaften:
+                \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+                    \item Immer $>= 0$
+                    \item Addition mit a, Varianz unverändert
+                    \item Multiplikation mit b, $Varianz * b^2$
+                \end{itemize}
+        \end{itemize}
+        \item Standardabweichung $\sigma$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $\sigma = \sqrt{\sigma^2}$
+            \item StichprobenSTD $S = \sqrt{S^2_{n-1}}$
+        \end{itemize}
+        \item Quartilsabstand (FEHLT)
+    \end{itemize}
+
+    \subsubsection*{Zweidimensionale Häuffigkeitstabellen}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Statistische Variablen X und Y mit versch.Auspräungen
+        \item Spaltensummen sowie Zeilensummen = n
+        \item Relative Häufigkeit $h_{ij} = \frac{n_{ij}}{n}$
+        \item Randverteilung = Betrachtung einer einzigen Variable
+        \item $ Z = X +Y$; $\overline{z} = \overline{x} + \overline{y}$; 
+    \end{itemize}
+
+    \subsubsection*{Kovarianz}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Arithmetisches Mittel des Produkts der Abweichung der einzelnen Beobachtungen von ihrem Mittel
+        \item $C_{XY} := \frac{1}{n}\sum_{j = 1}^{n}{(x_j - \overline{x})(y_j - \overline{y})}$ 
+        \item $C_{XY} = \overline{xy} - \overline{x}*\overline{y}$
+        \item  $C_{XY} > 0$ "große X-Werte zu großen Y-Werten"
+        \item $C_{XY} < 0$ "große Werte zu kleine Werten"
+        \item Sind zwei Variablen statistisch unabhängig ist die Kovarianz = 0
+    \end{itemize}
+
+    \subsubsection*{Korrelation}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Normal (Pearson) $r_{XY} = \frac{C_{XY}}{\sigma_x * \sigma_y}$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item normiertes Maß für Strenge des linearen statistischen Zusammenhangs
+            \item $r_{XY}$ hat das gleiche Vorzeichen wie $C_{XY}$
+            \item Bleibt unverändert bei linearer Transformation
+            \item $r_{XY} = r_{YX}$
+        \end{itemize}
+        \item Rangkorrelation (Spearman) $r_{XY}^{Sp} = r_{rg(X), rg(Y)}$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item für ordinale Variablen
+            \item misst monotonen Anteil des stat. Zusammenhangs
+            \item Ränge müssen vorher berechnet werden
+        \end{itemize}
+        \item Kovarianz und Korrelation bedeuten nicht zwangsweise eine kausale Beziehung!
+    \end{itemize}
+
+    \subsubsection*{Kontingenzkoeffizient}
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item beschreibt die Stärke des Zusammenhangs zweier Merkmale, nicht deren Richtung
+        \item Chi-Quadrat $QK = \sum_{i=1}^{k}\sum_{j=1}^{l}\frac{(n_{ji}-E_{ij})^2}{E_{ij}}$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $E_{ij} = \frac{1}{n}*n_i*n_j = \frac{1}{n}n(x_i)*n(y_j)$
+            \item Siehe Erweiterte Kontingeztabelle
+            \item X und Y unabhängig: $QK = 0$
+            \item Sonst $QK > 0$
+            \item Für 2x2 Matrix: $QK = \frac{n(ad-bc)^2}{(a+b)(a+c)(b+d)(c+d)}$
+            \item a bis d sind Inhalte der Tabelle, Summen sind Randhäufigkeiten
+            
+        \end{itemize}
+        \item Kontingenzkoeffizient $K := \sqrt{\frac{QK}{QK+n}}$
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item normiertes Maß
+            \item X und Y unabhängig: $K = 0$
+            \item $0 <= K <= K_{max} = \sqrt{\frac{m-1}{m}} < 1$
+            \item m = Minimum von Zeilenzahl und Spaltenzahl
+        \end{itemize}
+        \item Korrigierter K.-koeffizient $K^* := \frac{K}{K_{max}} = \sqrt{\frac{QK*m}{(QK+n)(m-1)}}$
+        \item \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $ 0 <= K^* <= 1$
+            \item Vergleichbar mit anderen K-Tabellen
+        \end{itemize}
     \end{itemize}
 
 
-    \section{Wahrscheinlich-keitsrechnung}
-    Hallo
-    \section{Schließende Statistik}
+  
+
+
+
+
+    \section{Regression}
+
+    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+        \item Lineare Regression $y(x) = a +bx$
+        \item $b = \frac{c_{XY}}{s_X^2}$ und $a = \overline{y} - b\overline{x}$
+    \end{itemize}
+
+
+    \section{S. Statistik}
     Hallo
     \section{Taschenrechner}
     Hallo
     
     \end{multicols}
+
+    \begin{table}[]
+        \begin{tabular}{l|l}
+        $n_{ij}$ & $(n_{ij}-E_{ij})^2$           \\ \hline
+        $n_{ij}-E_{ij}$           & $E_{ij}$
+        \end{tabular}
+        \end{table}
 \end{landscape}
 \end{document}
