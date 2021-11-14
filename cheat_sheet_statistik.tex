@@ -102,7 +102,7 @@
             \item Altn. Formel $\sigma^2 = \overline{x^2} - \overline{x}^2$
             \item Eigenschaften:
                 \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-                    \item Immer $>= 0$
+                    \item Immer $ \geq 0$
                     \item Addition mit a, Varianz unverändert
                     \item Multiplikation mit b, $Varianz * b^2$
                 \end{itemize}
@@ -169,12 +169,12 @@
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item normiertes Maß
             \item X und Y unabhängig: $K = 0$
-            \item $0 <= K <= K_{max} = \sqrt{\frac{m-1}{m}} < 1$
+            \item $0  \leq K  \leq K_{max} = \sqrt{\frac{m-1}{m}} < 1$
             \item m = Minimum von Zeilenzahl und Spaltenzahl
         \end{itemize}
         \item Korrigierter K.-koeffizient $K^* := \frac{K}{K_{max}} = \sqrt{\frac{QK*m}{(QK+n)(m-1)}}$
         \item \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-            \item $ 0 <= K^* <= 1$
+            \item $ 0  \leq K^*  \leq 1$
             \item Vergleichbar mit anderen K-Tabellen
         \end{itemize}
     \end{itemize}
@@ -211,8 +211,8 @@
         \item Bestimmtheitsmaß $R^2 = \frac{SSQ_{Reg}}{SSQ_{Total}} = \frac{S^2_{\hat{Y}}}{S^2_Y} = r^2$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $r^2$ gilt nicht für Quadr. Reg. !!!
-            \item Schlecht $0 <= R^2 <= 1$ Gut 
-            \item $R^2 >= 0.8$ akzeptabel
+            \item Schlecht $0  \leq R^2  \leq 1$ Gut 
+            \item $R^2  \geq 0.8$ akzeptabel
         \end{itemize}
         \item Multiple Regr. 
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -240,20 +240,20 @@
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Funktion, die jedem Möglichen Ergenis eine reelle Zahl zuordnet
             \item Wahrscheinlichkeits-/ Dichtefunktion $f: P(X =x)$
-            \item Verteiteilungsfunktion $F: P(X <= t)$
+            \item Verteiteilungsfunktion $F: P(X  \leq t)$
             \item $F$ ist Stammfunktion für $f$ aber muss mit $+C$ angepasst werden
         \end{itemize}
         \item Diskrete
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $f: \:R->[0,1] mit f(x)=P(X=x)$
             \item $P(X=X)$ Wahrscheinlichkeit mit der X die Realisation x annimmt
-            \item $F(t) = P(X <= t) = \sum_{x_i <= t} P(X = x_i)$
+            \item $F(t) = P(X  \leq t) = \sum_{x_i  \leq t} P(X = x_i)$
         \end{itemize}
         \item Stetige
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Zufallsvariable ist stetig, wenn Wahrscheinlichkeit durch Dichtefunktion abbilden lässt
-            \item Dichtefunktion, wenn $\int^{+\infty}_{-\infty} f(x) dx = 1$ und $f(x) >= 0$
-            \item $F(t) = P(X <= t) = \int^{t}_{-\infty} f(x)dx$
+            \item Dichtefunktion, wenn $\int^{+\infty}_{-\infty} f(x) dx = 1$ und $f(x)  \geq 0$
+            \item $F(t) = P(X  \leq t) = \int^{t}_{-\infty} f(x)dx$
         \end{itemize}
         \item Erwartungswert
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -305,9 +305,9 @@
                 \item $t = \sqrt{n-1}\frac{\overline{x}-\mu_0}{s_n}$
                 \item $->$ t Tabelle!
             \end{itemize}
-            \item Zweiseitig: $|z| <= z[1-\alpha/2]$ $H_0$ behalten; $|z| > z[1-\alpha/2]$ $H_0$ verwerfen
-            \item Ober/Rechts: $z <= z[1-\alpha]$ $H_0$ behalten; $z > z[1-\alpha]$ $H_0$ verwerfen
-            \item Unten/Links: $z >= z[1-\alpha]$ $H_0$ behalten; $z < z[1-\alpha]$ $H_0$ verwerfen
+            \item Zweiseitig: $|z|  \leq z[1-\alpha/2]$ $H_0$ behalten; $|z| > z[1-\alpha/2]$ $H_0$ verwerfen
+            \item Ober/Rechts: $z  \leq z[1-\alpha]$ $H_0$ behalten; $z > z[1-\alpha]$ $H_0$ verwerfen
+            \item Unten/Links: $z  \geq z[1-\alpha]$ $H_0$ behalten; $z < z[1-\alpha]$ $H_0$ verwerfen
             \item Gleiches für t-1
         \end{itemize}
         \subsubsection*{Varianztest}
@@ -317,15 +317,15 @@
             \item \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $t_n= \frac{1}{\sigma^2_0} \sum^n_{i=1} (x_i-\mu)^2$
             \item $H_0: \sigma^2 = \sigma^2_0$ gegen $H_1: \sigma^2 \neq \sigma^2_0$ Krit: $t_n < \chi^2_n[\alpha/2]$ und $t_n > \chi^2_n[1-\alpha/2]$
-            \item $H_0: \sigma^2 >= \sigma^2_0$ gegen $H_1: \sigma^2 < \sigma^2_0$ Krit: $t_n < \chi^2_n[\alpha]$ 
-            \item $H_0: \sigma^2 <= \sigma^2_0$ gegen $H_1: \sigma^2 > \sigma^2_0$ Krit: $t_n > \chi^2_n[1-\alpha]$ 
+            \item $H_0: \sigma^2  \geq \sigma^2_0$ gegen $H_1: \sigma^2 < \sigma^2_0$ Krit: $t_n < \chi^2_n[\alpha]$ 
+            \item $H_0: \sigma^2  \leq \sigma^2_0$ gegen $H_1: \sigma^2 > \sigma^2_0$ Krit: $t_n > \chi^2_n[1-\alpha]$ 
             \end{itemize}
             \item $\mu $ von GG. unbekannt
             \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $t_n= n*\frac{s^2_n}{\sigma^2_0}$
             \item $H_0: \sigma^2 = \sigma^2_0$ gegen $H_1: \sigma^2 \neq \sigma^2_0$ Krit: $t_n < \chi^2_{n-1}[\alpha/2]$ und $t_n > \chi^2_{n-1}[1-\alpha/2]$
-            \item $H_0: \sigma^2 >= \sigma^2_0$ gegen $H_1: \sigma^2 < \sigma^2_0$ Krit: $t_n < \chi^2_{n-1}[\alpha]$ 
-            \item $H_0: \sigma^2 <= \sigma^2_0$ gegen $H_1: \sigma^2 > \sigma^2_0$ Krit: $t_n > \chi^2_{n-1}[1-\alpha]$ 
+            \item $H_0: \sigma^2  \geq \sigma^2_0$ gegen $H_1: \sigma^2 < \sigma^2_0$ Krit: $t_n < \chi^2_{n-1}[\alpha]$ 
+            \item $H_0: \sigma^2  \leq \sigma^2_0$ gegen $H_1: \sigma^2 > \sigma^2_0$ Krit: $t_n > \chi^2_{n-1}[1-\alpha]$ 
             \end{itemize}
         \end{itemize}
 
@@ -337,17 +337,17 @@
             \item $t = \frac{\overline{x}-\overline{y}-\delta_0}{\sqrt{\frac{1}{n}+\frac{1}{m}}* s}$
             \item $s = \sqrt{\frac{n*s^2_n + m*s^2_m}{n+m-2}}$
             \item $H_0: \delta=\delta_0$ gegen $H_1: \delta \neq \delta_0$ Krit: $|t_n| > t_{n+m-2}[1-\alpha/2]$
-            \item  $H_0: \delta>=\delta_0$ gegen $H_1: \delta < \delta_0$ Krit: $t_n < t_{n+m-2}[\alpha]$
-            \item $H_0: \delta<=\delta_0$ gegen $H_1: \delta > \delta_0$ Krit: $t_n > t_{n+m-2}[1-\alpha]$
+            \item  $H_0: \delta \geq\delta_0$ gegen $H_1: \delta < \delta_0$ Krit: $t_n < t_{n+m-2}[\alpha]$
+            \item $H_0: \delta \leq\delta_0$ gegen $H_1: \delta > \delta_0$ Krit: $t_n > t_{n+m-2}[1-\alpha]$
         \end{itemize}
         
         \subsubsection*{$\chi^2$ Test}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-            \item $E_{ij} immer >= 5$
+            \item $E_{ij} immer  \geq 5$
             \item $H_0$ = X, Y sind unabhängig; $H_1$ = X, Y sind abhängig 
             \item Prüfgröße $\chi^2$ (wie oben, mit erw. Kont.-Tabelle)
             \item Krit.Wert: $c = \chi^2_{(k-1)(l-1)}[1-\alpha]$
-            \item $\chi^2 <= c$ H0 behalten
+            \item $\chi^2  \leq c$ H0 behalten
             \item $\chi^2 > c$ H0 verwerfen
         \end{itemize}
         \subsubsection*{P-Test}
@@ -366,7 +366,7 @@
             \item Testet ob, nicht auch alle Parameter = 0 sein könnten (Sinnhaftigkeit der Regression)
             \item Prüfgröße F aus Excel
             \item FWert: aus F-Verteilung oder gegeben
-            \item $F >= FWert$ $H_0$ verwerfen, Regressionsansatz sinnvoll
+            \item $F  \geq FWert$ $H_0$ verwerfen, Regressionsansatz sinnvoll
             \item $F < FWert$ $H_0$ behalten, Regressionsansatz schlecht
             \item Einfacher: Über  F.Krit
             \item $p Wert < F.Krit$ $H_0$ behalten, Regressionsansatz sinnvoll
