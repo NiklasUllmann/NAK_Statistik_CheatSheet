@@ -8,6 +8,12 @@
 
 \usepackage[left=10mm, right=10mm, top=10mm, bottom=10mm]{geometry}
 
+\usepackage{titlesec}
+
+\titlespacing\section{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
 
 
 \setlength{\columnseprule}{0.5pt}
@@ -222,7 +228,7 @@
         \end{itemize}
         \item Anmerkungen:
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-            \item Residualplot: Gutes Modell, wenn kein Mustererkennbar!
+            \item Residualplot: Gutes Modell, wenn kein Muster erkennbar!
             \item Optimum finden: 1.Ableitung = 0 setzen
             \item "Faktor Größe" hat nichts mit Einfluss zutun, nur bei standardisierten Daten
         \end{itemize}
@@ -285,7 +291,7 @@
         \end{itemize}
         \subsubsection*{Mittelwerttest}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-            \item Grundgesamtheit ist norm. verteilt oder $n > 30$
+            \item GGG ist norm. verteilt oder $n > 30$
             \item Stichprobenmittel $\overline{x}$ und ggf. Stichprobenvarianz $s^2$ bekannt
             \item $\sigma$ der GG bekannt
             \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -304,7 +310,7 @@
         \end{itemize}
         \subsubsection*{Varianztest}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-            \item Grundgesamtheit ist normalverteilt, $\alpha$ und $\sigma_0$ bekannt
+            \item GG ist normalverteilt, $\alpha$ und $\sigma_0$ bekannt
             \item $\mu $ von GG. bekannt
             \item \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $t_n= \frac{1}{\sigma^2_0} \sum^n_{i=1} (x_i-\mu)^2$
@@ -322,6 +328,16 @@
         \end{itemize}
 
         \subsubsection*{Differenztest}
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item GG ist normalverteilt
+            \item $\sigma^2_X$ und $\sigma^2_Y$ gleich aber unbekannt
+            \item $\delta_0$ vorgegeben oder $\delta = \mu_X - \mu_Y$
+            \item $t = \frac{\overline{x}-\overline{y}-\delta_0}{\sqrt{\frac{1}{n}+\frac{1}{m}}* s}$
+            \item $s = \sqrt{\frac{n*s^2_n + m*s^2_m}{n+m-2}}$
+            \item $H_0: \delta=\delta_0$ gegen $H_1: \delta \neq \delta_0$ Krit: $|t_n| > t_{n+m-2}[1-\alpha/2]$
+            \item  $H_0: \delta>=\delta_0$ gegen $H_1: \delta < \delta_0$ Krit: $t_n < t_{n+m-2}[\alpha]$
+            \item $H_0: \delta<=\delta_0$ gegen $H_1: \delta > \delta_0$ Krit: $t_n > t_{n+m-2}[1-\alpha]$
+        \end{itemize}
         
         \subsubsection*{$\chi^2$ Test}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
