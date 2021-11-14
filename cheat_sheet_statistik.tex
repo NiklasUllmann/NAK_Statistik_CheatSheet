@@ -279,12 +279,51 @@
         \item Zentr.Grenz.Satz: Für hinreichend großes n jeder Vertilung gilt $\overline{X}_n \tilde N(\mu, \frac{\sigma^2}{n}) $ "normalverteilt"
     \end{itemize}
     \section{Schl. Statistik}
-    \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-        \item Mittelwerttest
-        \item Varianztest
-        \item Differenzentest
+        \subsubsection*{Anmerkungen}
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $\alpha$ meist 5\% oder 1\%
+        \end{itemize}
+        \subsubsection*{Mittelwerttest}
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Grundgesamtheit ist norm. verteilt oder $n > 30$
+            \item Stichprobenmittel $\overline{x}$ und ggf. Stichprobenvarianz $s^2$ bekannt
+            \item $\sigma$ der GG bekannt
+            \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+                \item $z = \sqrt{n}\frac{\overline{x}-\mu_0}{\sigma}$
+                \item $->$ Tabelle Norm.Verteilung
+            \end{itemize}
+            \item $\sigma$ der GG unbekannt
+            \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+                \item $t = \sqrt{n-1}\frac{\overline{x}-\mu_0}{s_n}$
+                \item $->$ t Tabelle!
+            \end{itemize}
+            \item Zweiseitig: $|z| <= z[1-\alpha/2]$ $H_0$ behalten; $|z| > z[1-\alpha/2]$ $H_0$ verwerfen
+            \item Ober/Rechts: $z <= z[1-\alpha]$ $H_0$ behalten; $z > z[1-\alpha]$ $H_0$ verwerfen
+            \item Unten/Links: $z >= z[1-\alpha]$ $H_0$ behalten; $z < z[1-\alpha]$ $H_0$ verwerfen
+            \item Gleiches für t-1
+        \end{itemize}
+        \subsubsection*{Varianztest}
+        \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Grundgesamtheit ist normalverteilt, $\alpha$ und $\sigma_0$ bekannt
+            \item $\mu $ von GG. bekannt
+            \item \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $t_n= \frac{1}{\sigma^2_0} \sum^n_{i=1} (x_i-\mu)^2$
+            \item $H_0: \sigma^2 = \sigma^2_0$ gegen $H_1: \sigma^2 \neq \sigma^2_0$ Krit: $t_n < \chi^2_n[\alpha/2]$ und $t_n > \chi^2_n[1-\alpha/2]$
+            \item $H_0: \sigma^2 >= \sigma^2_0$ gegen $H_1: \sigma^2 < \sigma^2_0$ Krit: $t_n < \chi^2_n[\alpha]$ 
+            \item $H_0: \sigma^2 <= \sigma^2_0$ gegen $H_1: \sigma^2 > \sigma^2_0$ Krit: $t_n > \chi^2_n[1-\alpha]$ 
+            \end{itemize}
+            \item $\mu $ von GG. unbekannt
+            \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item $t_n= n*\frac{s^2_n}{\sigma^2_0}$
+            \item $H_0: \sigma^2 = \sigma^2_0$ gegen $H_1: \sigma^2 \neq \sigma^2_0$ Krit: $t_n < \chi^2_{n-1}[\alpha/2]$ und $t_n > \chi^2_{n-1}[1-\alpha/2]$
+            \item $H_0: \sigma^2 >= \sigma^2_0$ gegen $H_1: \sigma^2 < \sigma^2_0$ Krit: $t_n < \chi^2_{n-1}[\alpha]$ 
+            \item $H_0: \sigma^2 <= \sigma^2_0$ gegen $H_1: \sigma^2 > \sigma^2_0$ Krit: $t_n > \chi^2_{n-1}[1-\alpha]$ 
+            \end{itemize}
+        \end{itemize}
+
+        \subsubsection*{Differenztest}
         
-        \item $\chi^2$ Test
+        \subsubsection*{$\chi^2$ Test}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $E_{ij} immer >= 5$
             \item $H_0$ = X, Y sind unabhängig; $H_1$ = X, Y sind abhängig 
@@ -293,8 +332,7 @@
             \item $\chi^2 <= c$ H0 behalten
             \item $\chi^2 > c$ H0 verwerfen
         \end{itemize}
-    \end{itemize}
-    \section{Taschenrechner}
+    \section*{Taschenrechner}
     Hallo
     
     \end{multicols}
