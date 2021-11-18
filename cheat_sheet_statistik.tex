@@ -41,6 +41,17 @@
     \thispagestyle{empty}
 
     \begin{multicols}{4}
+        \begin{center}
+            \begin{tabular}{ll|ll}
+                Arith. Mittel & $\overline{x}$  & Kovarianz &  $C_{XY}$\\
+                Median      & $\widetilde{x}$ &  Korrelation     & $r_{XY}$  \\
+                Varianz      & $\sigma^2$ &  Chi Quadrat     &  $\chi^2$\\
+                SDA      &  $\sigma$&  KontingenzK    & $K$ \\
+                Sample Var.& $S^2$& Sample SDA& $S$ \\
+                Bestimmtheit& $R^2$&Korrig. K& $K^*$\\
+                Adj. Best. & $R^2_a$& Erwartungswert& $E(X)$
+                \end{tabular}
+        \end{center}
     \section{B. Statistik}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Qualitative Merkmale: 
@@ -203,7 +214,8 @@
         \item Lineare Regression $y(x) = a +bx$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $b = \frac{c_{XY}}{s_X^2}$ und $a = \overline{y} - b\overline{x}$
-            \item Interpret: b*x erhöht und Achsenabschnitt(meist nicht anwendbar)
+            \item Interpret: b*x erhöht pro Einheit und a: Achsenabschnitt
+            \item Extrapolation (Punkte außerhalb der orig. Daten) nicht aussagekräftig
             \item Regressionswerte = $\widehat{y}_i = y(x_i)$
             \item Residuen (Fehler) $e_i = y_i - \widehat{y}_i$
         \end{itemize}
@@ -317,26 +329,35 @@
                 \item $t = \sqrt{n-1}\frac{\overline{x}-\mu_0}{s_n}$
                 \item $>$ t Tabelle!
             \end{itemize}
-            \item Zweiseitig: $|z|  \leq z[1-\alpha/2]$ $H_0$ behalten; $|z| > z[1-\alpha/2]$ $H_0$ verwerfen
-            \item Ober/Rechts: $z  \leq z[1-\alpha]$ $H_0$ behalten; $z > z[1-\alpha]$ $H_0$ verwerfen
-            \item Unten/Links: $z  \geq z[1-\alpha]$ $H_0$ behalten; $z < z[1-\alpha]$ $H_0$ verwerfen
-            \item Gleiches für t-1
+            \item Gleiches gilt für t-1
         \end{itemize}
+        \begin{center}
+            \begin{tabular}{|l|l|l|}
+             Seite:& $H_0$ behalten & $H_0$ verwerfen  \\ \hline
+             Beide & $|z|  \leq z[1-\alpha/2]$  & $|z| > z[1-\alpha/2]$  \\ \hline
+             Rechts& $z  \leq z[1-\alpha]$ &  $z > z[1-\alpha]$ \\ \hline
+             Links & $z  \geq z[1-\alpha]$  &  $z < z[1-\alpha]$ \\ \hline
+            \end{tabular}
+        \end{center}
+
+
+
+
         \subsubsection*{Varianztest}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item GG ist normalverteilt, $\alpha$ und $\sigma_0$ bekannt
             \item $\mu $ von GG. bekannt
             \item \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $t_n= \frac{1}{\sigma^2_0} \sum^n_{i=1} (x_i-\mu)^2$
-            \item Siehe (I)
+            \item Siehe (II)
             \end{itemize}
             \item $\mu $ von GG. unbekannt
             \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $t_n= n*\frac{s^2_n}{\sigma^2_0}$
-            \item Siehe (II)
+            \item Siehe (III)
             \end{itemize}
         \end{itemize}
-        I
+        II
         \begin{center}
             \begin{tabular}{|l|l|l|}
             \hline
@@ -346,7 +367,7 @@
              $\sigma^2  \leq \sigma^2_0$     &  $\sigma^2 > \sigma^2_0$&   $t_n > \chi^2_n[1-\alpha]$   \\ \hline
             \end{tabular}
     \end{center}
-        II
+        III
         \begin{center}
             \begin{tabular}{|l|l|l|}
             \hline
@@ -362,9 +383,8 @@
             \item GG ist normalverteilt
             \item $\sigma^2_X$ und $\sigma^2_Y$ gleich aber unbekannt
             \item $\delta_0$ vorgegeben oder $\delta = \mu_X - \mu_Y$
-            \item $t = \frac{\overline{x}-\overline{y}-\delta_0}{\sqrt{\frac{1}{n}+\frac{1}{m}}* s}$
-            \item $s = \sqrt{\frac{n*s^2_n + m*s^2_m}{n+m-2}}$ 
         \end{itemize}
+             $$t = \frac{\overline{x}-\overline{y}-\delta_0}{\sqrt{\frac{1}{n}+\frac{1}{m}}* \sqrt{\frac{n*s^2_n + m*s^2_m}{n+m-2}}}$$
         \begin{center}
                 \begin{tabular}{|l|l|l|}
                 \hline
