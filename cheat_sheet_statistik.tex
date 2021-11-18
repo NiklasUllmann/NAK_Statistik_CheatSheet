@@ -10,6 +10,16 @@
 
 \usepackage{titlesec}
 
+\usepackage[utf8]{inputenc}
+\usepackage{fourier} 
+\usepackage{array}
+\usepackage{makecell}
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
 \titlespacing\section{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsubsection{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
@@ -127,8 +137,7 @@
     \subsubsection*{Kovarianz}
     \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
         \item Arithmetisches Mittel des Produkts der Abweichung der einzelnen Beobachtungen von ihrem Mittel
-        \item $C_{XY} := \frac{1}{n}\sum_{j = 1}^{n}{(x_j - \overline{x})(y_j - \overline{y})}$ 
-        \item $C_{XY} = \overline{xy} - \overline{x}*\overline{y}$
+        \item $C_{XY} := \frac{1}{n}\sum_{j = 1}^{n}{(x_j - \overline{x})(y_j - \overline{y})} = \overline{xy} - \overline{x}*\overline{y}$ 
         \item  $C_{XY} > 0$ "große X-Werte zu großen Y-Werten"
         \item $C_{XY} < 0$ "große Werte zu kleine Werten"
         \item Sind zwei Variablen statistisch unabhängig ist die Kovarianz = 0
@@ -142,12 +151,15 @@
             \item $r_{XY}$ hat das gleiche Vorzeichen wie $C_{XY}$
             \item Bleibt unverändert bei linearer Transformation
             \item $r_{XY} = r_{YX}$
+            \item $-1 \leq r_{XY} \leq +1$
         \end{itemize}
         \item Rangkorrelation (Spearman) $r_{XY}^{Sp} = r_{rg(X), rg(Y)}$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item für ordinale Variablen
             \item misst monotonen Anteil des stat. Zusammenhangs
             \item Ränge müssen vorher berechnet werden
+            \item $-1 \leq r_{XY}^{Sp} \leq +1$
+
         \end{itemize}
         \item Kovarianz und Korrelation bedeuten nicht zwangsweise eine kausale Beziehung!
     \end{itemize}
@@ -303,7 +315,7 @@
             \item $\sigma$ der GG unbekannt
             \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
                 \item $t = \sqrt{n-1}\frac{\overline{x}-\mu_0}{s_n}$
-                \item $->$ t Tabelle!
+                \item $>$ t Tabelle!
             \end{itemize}
             \item Zweiseitig: $|z|  \leq z[1-\alpha/2]$ $H_0$ behalten; $|z| > z[1-\alpha/2]$ $H_0$ verwerfen
             \item Ober/Rechts: $z  \leq z[1-\alpha]$ $H_0$ behalten; $z > z[1-\alpha]$ $H_0$ verwerfen
@@ -316,18 +328,34 @@
             \item $\mu $ von GG. bekannt
             \item \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $t_n= \frac{1}{\sigma^2_0} \sum^n_{i=1} (x_i-\mu)^2$
-            \item $H_0: \sigma^2 = \sigma^2_0$ gegen $H_1: \sigma^2 \neq \sigma^2_0$ Krit: $t_n < \chi^2_n[\alpha/2]$ und $t_n > \chi^2_n[1-\alpha/2]$
-            \item $H_0: \sigma^2  \geq \sigma^2_0$ gegen $H_1: \sigma^2 < \sigma^2_0$ Krit: $t_n < \chi^2_n[\alpha]$ 
-            \item $H_0: \sigma^2  \leq \sigma^2_0$ gegen $H_1: \sigma^2 > \sigma^2_0$ Krit: $t_n > \chi^2_n[1-\alpha]$ 
+            \item Siehe (I)
             \end{itemize}
             \item $\mu $ von GG. unbekannt
             \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $t_n= n*\frac{s^2_n}{\sigma^2_0}$
-            \item $H_0: \sigma^2 = \sigma^2_0$ gegen $H_1: \sigma^2 \neq \sigma^2_0$ Krit: $t_n < \chi^2_{n-1}[\alpha/2]$ und $t_n > \chi^2_{n-1}[1-\alpha/2]$
-            \item $H_0: \sigma^2  \geq \sigma^2_0$ gegen $H_1: \sigma^2 < \sigma^2_0$ Krit: $t_n < \chi^2_{n-1}[\alpha]$ 
-            \item $H_0: \sigma^2  \leq \sigma^2_0$ gegen $H_1: \sigma^2 > \sigma^2_0$ Krit: $t_n > \chi^2_{n-1}[1-\alpha]$ 
+            \item Siehe (II)
             \end{itemize}
         \end{itemize}
+        I
+        \begin{center}
+            \begin{tabular}{|l|l|l|}
+            \hline
+            $H_0$ & $H_1$ & Krit. \\ \hline
+            $ \sigma^2 = \sigma^2_0$      & $ \sigma^2 \neq \sigma^2_0$ &\makecell{$t_n < \chi^2_n[\alpha/2]$\\$t_n > \chi^2_n[1-\alpha/2]$}\\ \hline
+             $ \sigma^2  \geq \sigma^2_0$    & $\sigma^2 < \sigma^2_0$  &  $t_n < \chi^2_n[\alpha]$    \\ \hline
+             $\sigma^2  \leq \sigma^2_0$     &  $\sigma^2 > \sigma^2_0$&   $t_n > \chi^2_n[1-\alpha]$   \\ \hline
+            \end{tabular}
+    \end{center}
+        II
+        \begin{center}
+            \begin{tabular}{|l|l|l|}
+            \hline
+            $H_0$ & $H_1$ & Krit. \\ \hline
+            $ \sigma^2 = \sigma^2_0$      & $ \sigma^2 \neq \sigma^2_0$ &\makecell{$t_n < \chi^2_{n-1}[\alpha/2]$\\$t_n > \chi^2_{n-1}[1-\alpha/2]$}\\ \hline
+             $ \sigma^2  \geq \sigma^2_0$    & $\sigma^2 < \sigma^2_0$  &  $t_n < \chi^2_{n-1}[\alpha]$     \\ \hline
+             $\sigma^2  \leq \sigma^2_0$     &  $\sigma^2 > \sigma^2_0$&   $t_n > \chi^2_{n-1}[1-\alpha]$   \\ \hline
+            \end{tabular}
+    \end{center}
 
         \subsubsection*{Differenztest}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -335,11 +363,17 @@
             \item $\sigma^2_X$ und $\sigma^2_Y$ gleich aber unbekannt
             \item $\delta_0$ vorgegeben oder $\delta = \mu_X - \mu_Y$
             \item $t = \frac{\overline{x}-\overline{y}-\delta_0}{\sqrt{\frac{1}{n}+\frac{1}{m}}* s}$
-            \item $s = \sqrt{\frac{n*s^2_n + m*s^2_m}{n+m-2}}$
-            \item $H_0: \delta=\delta_0$ gegen $H_1: \delta \neq \delta_0$ Krit: $|t_n| > t_{n+m-2}[1-\alpha/2]$
-            \item  $H_0: \delta \geq\delta_0$ gegen $H_1: \delta < \delta_0$ Krit: $t_n < t_{n+m-2}[\alpha]$
-            \item $H_0: \delta \leq\delta_0$ gegen $H_1: \delta > \delta_0$ Krit: $t_n > t_{n+m-2}[1-\alpha]$
+            \item $s = \sqrt{\frac{n*s^2_n + m*s^2_m}{n+m-2}}$ 
         \end{itemize}
+        \begin{center}
+                \begin{tabular}{|l|l|l|}
+                \hline
+                $H_0$ & $H_1$ & Krit. \\ \hline
+                $\delta=\delta_0$      & $ \delta \neq \delta_0$ &   $|t_n| > t_{n+m-2}[1-\alpha/2]$    \\ \hline
+                 $\delta \geq\delta_0$     & $\delta < \delta_0$  &  $t_n < t_{n+m-2}[\alpha]$     \\ \hline
+                 $\delta \leq\delta_0$     &  $\delta > \delta_0$&   $t_n > t_{n+m-2}[1-\alpha]$    \\ \hline
+                \end{tabular}
+        \end{center}
         
         \subsubsection*{$\chi^2$ Test}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -351,9 +385,6 @@
             \item $\chi^2 > c$ H0 verwerfen
         \end{itemize}
         \subsubsection*{P-Test}
-
-
-
 
     \section*{Excel Tests}
     \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -382,15 +413,13 @@
             \end{tabular}
     \end{center}
     \begin{center}
-        \begin{tabular}{lll}
-            Test\textbackslash{}Realität & $H_0$ richtig                           & $H_1$ richtig       \\
-            $H_0$ behalten                  & \multicolumn{1}{l|}{ok (Spezifität)} & $\beta$ Fehler (FP)     \\ \cline{2-3} 
-            $H_0$ verwerfen                 & \multicolumn{1}{l|}{$\alpha$ Fehler (FN)}    & ok (Sensitivität)
+        \begin{tabular}{|l|l|l|}
+            Test\textbackslash{}Realität & $H_0$ richtig                           & $H_1$ richtig       \\ \hline
+            $H_0$ behalten                  & \multicolumn{1}{l|}{ok (Spezifität)} & $\beta$ Fehler (FP)     \\ \hline 
+            $H_0$ verwerfen                 & \multicolumn{1}{l|}{$\alpha$ Fehler (FN)}    & ok (Sensitivität) 
             \end{tabular}
     \end{center}
     
     \end{multicols}
-
-
 \end{landscape}
 \end{document}
