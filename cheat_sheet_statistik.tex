@@ -90,9 +90,9 @@
             \item Mittleres Element der geordneten Liste
             \item Bei gerader Anzahl, Durchschnitt der mittleren Elemente
         \end{itemize}
-        \item Quartile (FEHLT)
+        \item Quartile
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-            \item Unteres Quartil $\widetilde{x}_{0,25}$
+            \item Unteres Quartil $\widetilde{x}_{0,25}$ (sortieren \& ablesen)
             \item Oberes Quartil $\widetilde{x}_{0,75}$
         \end{itemize}
         \item Varianz $\sigma^2$
@@ -112,7 +112,7 @@
             \item $\sigma = \sqrt{\sigma^2}$
             \item StichprobenSDA $S = \sqrt{S^2_{n-1}}$
         \end{itemize}
-        \item Quartilsabstand (FEHLT)
+        \item Quartilsabstand $\widetilde{x}_{0,75} - \widetilde{x}_{0,25}$
     \end{itemize}
 
     \subsubsection*{Zweidimensionale Häuffigkeitstabellen}
@@ -384,8 +384,8 @@
     \begin{center}
         \begin{tabular}{lll}
             Test\textbackslash{}Realität & $H_0$ richtig                           & $H_1$ richtig       \\
-            $H_0$ behalten                  & \multicolumn{1}{l|}{ok (Spezifität)} & $\beta$ Fehler      \\ \cline{2-3} 
-            $H_0$ verwerfen                 & \multicolumn{1}{l|}{$\alpha$ Fehler}    & ok (Sisitivität)
+            $H_0$ behalten                  & \multicolumn{1}{l|}{ok (Spezifität)} & $\beta$ Fehler (FP)     \\ \cline{2-3} 
+            $H_0$ verwerfen                 & \multicolumn{1}{l|}{$\alpha$ Fehler (FN)}    & ok (Sensitivität)
             \end{tabular}
     \end{center}
     
