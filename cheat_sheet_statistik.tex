@@ -373,14 +373,24 @@
             \item $p Wert > F.Krit$ $H_0$ verwerfen, Regressionsansatz schlecht
         \end{itemize}
     \end{itemize}
+
+    \section*{Other}
+    \begin{center}
+        \begin{tabular}{l|l}
+            $n_{ij}$ & $(n_{ij}-E_{ij})^2$           \\ \hline
+            $n_{ij}-E_{ij}$           & $E_{ij}$
+            \end{tabular}
+    \end{center}
+    \begin{center}
+        \begin{tabular}{lll}
+            Test\textbackslash{}Realität & $H_0$ richtig                           & $H_1$ richtig       \\
+            $H_0$ behalten                  & \multicolumn{1}{l|}{ok (Spezifität)} & $\beta$ Fehler      \\ \cline{2-3} 
+            $H_0$ verwerfen                 & \multicolumn{1}{l|}{$\alpha$ Fehler}    & ok (Sisitivität)
+            \end{tabular}
+    \end{center}
     
     \end{multicols}
 
-    \begin{table}[]
-        \begin{tabular}{l|l}
-        $n_{ij}$ & $(n_{ij}-E_{ij})^2$           \\ \hline
-        $n_{ij}-E_{ij}$           & $E_{ij}$
-        \end{tabular}
-        \end{table}
+
 \end{landscape}
 \end{document}
