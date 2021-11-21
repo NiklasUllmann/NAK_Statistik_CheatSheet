@@ -20,9 +20,9 @@
 \renewcommand\theadgape{\Gape[4pt]}
 \renewcommand\cellgape{\Gape[4pt]}
 
-\titlespacing\section{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
-\titlespacing\subsection{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
-\titlespacing\subsubsection{0pt}{10pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\section{0pt}{5pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{5pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{5pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 
 
 
@@ -32,7 +32,7 @@
 \pagenumbering{gobble}
 
 \title{Statistik Cheat Sheet}
-\author{MADSo21}
+\author{Niklas Ullmann}
 \date{Fall 2021}
 
 
@@ -89,7 +89,7 @@
             \item natürliche oder festzulegende Rangfolge
             \item IQ, Schulnoten
         \end{itemize}
-        \item Kardinal
+        \item Kardinal/Metrisch
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item numerischer Art 
             \item Ausprägung und Unterschied sind messbar
@@ -102,24 +102,33 @@
         \item Arithmetisches Mittel $\overline{x}$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $\overline{x}=\frac{1}{n}\sum _{i=1}^{n}a_{i}={\frac {a_{1}+a_{2}+\cdots +a_{n}}{n}}$ 
+            \item Nur auf kardinale Merkmale
             \item Summe aller Abweichungen vom Mittel = 0
             \item Verschiebung um kostanten Wert a $a + \overline{x}$
             \item Multiplikation mit konstantem Wert $a \cdot \overline{x}$
+            \item Auch als gewichtetes arth. Mittel mit den relativen Häufigkeiten
         \end{itemize}
         \item Median $\widetilde{x}$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Mittleres Element der geordneten Liste
             \item Bei gerader Anzahl, Durchschnitt der mittleren Elemente
+            \item Ordinal und Kardinale Merkmale
         \end{itemize}
-        \item Quartile
+        \item Modus 
+        \item \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
+            \item Meist auftretendes Element
+            \item Alle Skalenniveaus
+        \end{itemize}
+        \item Quartile (sortieren \& ablesen)
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-            \item Unteres Quartil $\widetilde{x}_{0,25}$ (sortieren \& ablesen)
+            \item Unteres Quartil $\widetilde{x}_{0,25}$ 
             \item Oberes Quartil $\widetilde{x}_{0,75}$
+            \item GENAU 25\% der Werte
         \end{itemize}
         \item Varianz $\sigma^2$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
-            \item Populations Varianz $\sigma^2 = \frac{\displaystyle\sum_{i=1}^{N}(x_i - \mu)^2} {N}$
-            \item Sample Varianz $S^2_{n-1} = \frac{\displaystyle\sum_{i=1}^{n}(x_i - \overline{x})^2} {n-1}$
+            \item Populations Varianz $\sigma^2 = \frac{1}{N} \displaystyle\sum_{i=1}^{N}(x_i - \mu)^2$
+            \item Sample Varianz $S^2_{n-1} = \frac{1}{n-1}\displaystyle\sum_{i=1}^{n}(x_i - \overline{x})^2$
             \item Altn. Formel $\sigma^2 = \overline{x^2} - \overline{x}^2$
             \item Eigenschaften:
                 \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -133,7 +142,7 @@
             \item $\sigma = \sqrt{\sigma^2}$
             \item StichprobenSDA $S = \sqrt{S^2_{n-1}}$
         \end{itemize}
-        \item Quartilsabstand $\widetilde{x}_{0,75} - \widetilde{x}_{0,25}$
+        \item (Inter-) Quartilsabstand $\widetilde{x}_{0,75} - \widetilde{x}_{0,25}$
     \end{itemize}
 
     \subsubsection*{Zweidimensionale Häuffigkeitstabellen}
@@ -167,8 +176,10 @@
         \item Rangkorrelation (Spearman) $r_{XY}^{Sp} = r_{rg(X), rg(Y)}$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item für ordinale Variablen
-            \item misst monotonen Anteil des stat. Zusammenhangs
+            \item misst linearen \& monotonen Zusammenhangs
+            \item Ist unempfindlich gegenüber Ausreißern
             \item Ränge müssen vorher berechnet werden
+            \item Berechnung mit TR über Ränge
             \item $-1 \leq r_{XY}^{Sp} \leq +1$
 
         \end{itemize}
@@ -178,6 +189,7 @@
     \subsubsection*{Kontingenzkoeffizient}
     \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
         \item beschreibt die Stärke des Zusammenhangs zweier Merkmale, nicht deren Richtung
+        \item Nur für kardinale Merkmale
         \item Chi-Quadrat $QK = \sum_{i=1}^{k}\sum_{j=1}^{l}\frac{(n_{ji}-E_{ij})^2}{E_{ij}}$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $E_{ij} = \frac{1}{n}*n_i*n_j = \frac{1}{n}n(x_i)*n(y_j)$
@@ -299,7 +311,9 @@
         \item Stichprobe:
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Stichprobenmittel von unabhängigen Variablen $\overline{X} := \frac{1}{n} (X_1 + \dots + X_n)$
-            \item $E(\overline{X}) = \mu$ und $\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}$
+            \item $E(\overline{X}) = \mu$ 
+            \item SDA von $\overline{X}$ $\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}$
+            \item Wahrscheinlichkeit, dass etwas größer/kleiner bei Stichprobe n ist: Einfach Gaußtest. 
         \end{itemize}
         \item Normalverteilung
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -314,6 +328,8 @@
         \subsubsection*{Anmerkungen}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $\alpha$ meist 5\% oder 1\%
+            \item "Mindestens" meint meist beidseitgen Test
+            \item "Maximal" meint meist rechtsseitigen Test
         \end{itemize}
         \subsubsection*{Mittelwerttest}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -409,12 +425,17 @@
     \section*{Excel Tests}
     \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
         \item Koeffizienten für jede $X_i$ $->$ Formel lässt sich daraus ableiten
-        \item Parameter wird nur im Modell behalten wenn $t > |\frac{\hat{\beta_j}}{\hat{\sigma}_j}| > 2$
-        \item Signifikanzniveau von ca. 5\%
-        \item Alternativ: p-Werte < $\alpha$ werden behalten, p-Werte > $\alpha$ werden verworfen
+        \item t-Statistik:
+        \begin{itemize}
+            \item Test, ob x überhaupt y beeinflusst
+            \item Parameter wird nur im Modell behalten wenn $|t| := |\frac{\hat{\beta_j}}{\hat{\sigma}_j}| > 2$
+            \item Signifikanzniveau von ca. 5\%
+            \item Alternativ: p-Werte < $\alpha$ werden behalten, p-Werte > $\alpha$ werden verworfen
+        \end{itemize}[noitemsep,nolistsep,leftmargin=*]
         \item F-Test des Bestimmtheitsmaßes:
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Testet ob, nicht auch alle Parameter = 0 sein könnten (Sinnhaftigkeit der Regression)
+            \item $H_0: $
             \item Prüfgröße F aus Excel
             \item FWert: aus F-Verteilung oder gegeben
             \item $F  \geq FWert$ $H_0$ verwerfen, Regressionsansatz sinnvoll
@@ -426,6 +447,8 @@
     \end{itemize}
 
     \section*{Other}
+    Integrationsregel - Fläche unter Funktion 
+    $\int_a^b x^n = [\frac{1}{n+1}x^{n+1}]^b_a = [\frac{1}{n+1}b^{n+1}]-[\frac{1}{n+1}a^{n+1}]$
     \begin{center}
         \begin{tabular}{l|l}
             $n_{ij}$ & $(n_{ij}-E_{ij})^2$           \\ \hline
