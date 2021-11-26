@@ -57,24 +57,20 @@
             \item Qualitative Merkmale: 
                 \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
                     \item Variieren nach Beschaffenheit
-                    \item Bspw. Geschlecht
                 \end{itemize}
             \item Quantitative Merkmale:
                 \begin{itemize}[noitemsep,nolistsep]
                     \item Variieren nach Wert/Zahlen
-                    \item Bspw. Alter, Einkommen
                 \end{itemize}
         \end{itemize}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Diskrete Merkmale: 
                 \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
                     \item abgestufte Werte
-                    \item Bspw. Einkommensklasse
                 \end{itemize}
             \item Stetige Merkmale:
                 \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
                     \item können im Intervall jeden reellen Wert annehmen
-                    \item Bspw. Körpergröße
                 \end{itemize}
         \end{itemize}
     \subsubsection*{Skalenniveaus}
@@ -82,19 +78,18 @@
         \item Nominal
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item nur Gleichheit oder Andersartigkeit feststellbar (keine Bewertung)
-            \item stets qualitativ (Religion, Beruf etc.)
+            \item stets qualitativ
         \end{itemize}
         \item Ordinal
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item natürliche oder festzulegende Rangfolge
-            \item IQ, Schulnoten
         \end{itemize}
         \item Kardinal/Metrisch
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item numerischer Art 
             \item Ausprägung und Unterschied sind messbar
-            \item verhältnisskaliert (Absoluter Nullpunkt vorhanden; Gewicht, Preis (Doppelt so viel.))
-            \item intervallskaliert (Kein Nullpunkt, nur Differenzen; Temperatur, GebJahr (10 Grad wärmer als gestern))
+            \item verhältnisskaliert (Absoluter Nullpunkt vorhanden; (Doppelt so viel.))
+            \item intervallskaliert (Kein Nullpunkt, nur Differenzen;
         \end{itemize}
     \end{itemize}
     \subsubsection*{Werte}
@@ -123,7 +118,7 @@
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Unteres Quartil $\widetilde{x}_{0,25}$ 
             \item Oberes Quartil $\widetilde{x}_{0,75}$
-            \item GENAU 25\% der Werte
+            \item Mindestens 25\% der Werte
         \end{itemize}
         \item Varianz $\sigma^2$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
@@ -176,7 +171,7 @@
         \item Rangkorrelation (Spearman) $r_{XY}^{Sp} = r_{rg(X), rg(Y)}$
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item für ordinale Variablen
-            \item misst linearen \& monotonen Zusammenhangs
+            \item misst monotonen Zusammenhangs
             \item Ist unempfindlich gegenüber Ausreißern
             \item Ränge müssen vorher berechnet werden
             \item Berechnung mit TR über Ränge
@@ -288,7 +283,7 @@
         \item Stetige
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item Zufallsvariable ist stetig, wenn Wahrscheinlichkeit durch Dichtefunktion abbilden lässt
-            \item Dichtefunktion, wenn $\int^{+\infty}_{-\infty} f(x) dx = 1$ und $f(x)  \geq 0$
+            \item Dichtefunktion, wenn $\int^{+\infty}_{-\infty} f(x) dx = 1$, $f(x)  \geq 0$ und $f: X -> R$
             \item $F(t) = P(X  \leq t) = \int^{t}_{-\infty} f(x)dx$
         \end{itemize}
         \item Erwartungswert
@@ -328,6 +323,7 @@
         \subsubsection*{Anmerkungen}
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item $\alpha$ meist 5\% oder 1\%
+            \item Wenn nötig: Punktschätzung SDA: $\hat{\sigma}^2 = \frac{n}{n-1}s^2$
             \item "Mindestens" meint meist beidseitgen Test
             \item "Maximal" meint meist rechtsseitigen Test
         \end{itemize}
@@ -335,7 +331,6 @@
         \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
             \item GG ist norm. verteilt oder $n > 30$
             \item Stichprobenmittel $\overline{x}$ und ggf. Stichprobenvarianz $s^2$ bekannt
-            \item Wenn nötig: Punktschätzung SDA: $\hat{\sigma}^2 = \frac{n}{n-1}s^2$
             \item $\sigma$ der GG bekannt
             \begin{itemize}[noitemsep,nolistsep,leftmargin=*]
                 \item $z = \sqrt{n}\frac{\overline{x}-\mu_0}{\sigma}$
