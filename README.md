@@ -1,6 +1,7 @@
 # Statistik Cheat Sheet - Nordakademie DataScience
 
-Status: Work in Progress :D
+Dozent: B. Christiansen
+Status: 99,99%
 ## Compile
 
 - 'pdflatex cheat_sheet_statistik.tex'
